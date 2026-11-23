@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#15120f">
+  <title>Forja & Feitiço | Loja de RPG</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topline">✦ O MERCADO DOS AVENTUREIROS ✦ &nbsp; Itens raros, poções e equipamentos para sua jornada</div>
+  <header class="header">
+    <a class="brand" href="#"><span class="brand-mark">⚒</span><span><strong>FORJA <i>&</i> FEITIÇO</strong><small>COMÉRCIO DE ITENS MÍSTICOS</small></span></a>
+    <nav>
+      <a href="#inicio">Início</a><a href="#catalogo">Catálogo</a><a href="#sobre">A guilda</a>
+    </nav>
+    <button class="cart-button" id="openCart" aria-label="Abrir carrinho">♧ <span>Carrinho</span><b id="cartCount">0</b></button>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <span class="eyebrow">✧ SUA PRÓXIMA AVENTURA COMEÇA AQUI ✧</span>
+        <h1>Prepare-se para<br><em>grandes jornadas.</em></h1>
+        <p>Das armas mais resistentes aos artefatos lendários: encontre tudo o que um aventureiro precisa para entrar para a história.</p>
+        <a class="primary-button" href="#catalogo">Explorar catálogo <span>→</span></a>
+        <div class="hero-notes"><span>✦ Produtos selecionados</span><span>✦ Para todos os ranks</span></div>
+      </div>
+      <div class="hero-art" aria-label="Ilustração de fantasia medieval">
+        <div class="rune rune-one">✧</div><div class="rune rune-two">ᚱ</div>
+        <div class="sun-glow"></div><div class="sword">⚔</div>
+        <div class="hero-seal"><small>GUILD APPROVED</small><strong>★</strong><small>EST. 1248</small></div>
+      </div>
+      <div class="hero-bottom">✦ FORJADO PARA AVENTUREIROS ✦</div>
+    </section>
+
+    <section class="benefits">
+      <div><span>⚔</span><p><b>Equipamentos</b><small>Para toda missão</small></p></div>
+      <div><span>⚗</span><p><b>Alquimia</b><small>Poções e elixires</small></p></div>
+      <div><span>◇</span><p><b>Artefatos</b><small>Itens extraordinários</small></p></div>
+      <div><span>♜</span><p><b>Guilda</b><small>Atenda seu rank</small></p></div>
+    </section>
+
+    <section class="catalog section" id="catalogo">
+      <div class="section-heading">
+        <div><span class="eyebrow">TESOUROS À SUA ESPERA</span><h2>Catálogo da <em>guilda</em></h2></div>
+        <span class="stock-note">✦ Estoque atualizado</span>
+      </div>
+      <div class="toolbar">
+        <label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="Buscar um item..."></label>
+        <select id="categoryFilter" aria-label="Filtrar categoria"><option value="Todas">Todas as categorias</option></select>
+        <select id="sortFilter" aria-label="Ordenar produtos"><option value="featured">Destaques</option><option value="low">Menor preço</option><option value="high">Maior preço</option><option value="name">Nome A–Z</option></select>
+      </div>
+      <div class="category-pills" id="categoryPills"></div>
+      <div class="product-grid" id="productGrid"></div>
+      <p class="empty-state" id="emptyState" hidden>Nenhum item encontrado. Tente outra busca.</p>
+    </section>
+
+    <section class="guild-banner" id="sobre">
+      <div class="guild-symbol">✥</div>
+      <div><span class="eyebrow">A GUILDAS DOS COMERCIANTES</span><h2>Todo herói tem uma<br><em>boa história. E bons itens.</em></h2><p>Reúna seus equipamentos, prepare suas poções e siga rumo à próxima missão.</p></div>
+      <a href="#catalogo" class="outline-button">Ver equipamentos →</a>
+    </section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">⚒</span><span><strong>FORJA <i>&</i> FEITIÇO</strong><small>COMÉRCIO DE ITENS MÍSTICOS</small></span></a><p>Uma loja fictícia para aventureiros de todos os reinos.</p><small>© 2026 Forja & Feitiço · Projeto acadêmico</small></footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Carrinho de compras" aria-hidden="true">
+    <div class="drawer-head"><div><span class="eyebrow">SUA MOCHILA</span><h2>Meu carrinho</h2></div><button id="closeCart" class="close-button" aria-label="Fechar">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer"><div class="total-line"><span>Total</span><strong id="cartTotal">0 PO</strong></div><button class="primary-button checkout" id="checkoutButton">Finalizar pedido <span>→</span></button><small>Esta demonstração não realiza pagamentos.</small></div>
+  </aside>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+</body>
+</html>
